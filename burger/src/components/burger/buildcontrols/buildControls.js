@@ -10,6 +10,11 @@ export const buildControls = (props) => (
             label={control.label}
             disabled={control.count <= 0}
             add={() => props.addIngredient(control.type)}
-            remove={() => props.removeIngredient(control.type)}></BuildControl>)}
+            remove={() => props.removeIngredient(control.type)}></BuildControl>)
+        }
+        <button
+            className={classes.orderButton}
+            disabled={!props.purchasable}
+            onClick={props.orderProduct}>ORDER NOW</button>
     </div>
 );
